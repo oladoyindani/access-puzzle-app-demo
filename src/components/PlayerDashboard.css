@@ -1,0 +1,41 @@
+/* client/src/components/PlayerDashboard.css */
+.player-dashboard {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.player-dashboard h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.player-dashboard p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.player-dashboard nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.player-dashboard nav ul li {
+  margin: 15px 0;
+}
+
+.player-dashboard nav ul li a {
+  color: #28a745;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.player-dashboard nav ul li a:hover {
+  color: #1e7e34;
+}
