@@ -17,7 +17,7 @@ const LoginPage = ({ onLogin }) => {
     const endpoint ='/api/auth/player-login';
     const payload = { email, name };
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/player-login', payload);
+      const response = await axios.post('https://access-puzzle-backend.onrender.com/api/auth/player-login', payload);
       onLogin(response.data);
       // Redirect to the crossword puzzle page
       navigate('/game');
