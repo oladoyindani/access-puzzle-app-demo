@@ -11,7 +11,7 @@ const Crossword = () => {
   useEffect(() => {
     const fetchPuzzle = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/puzzle');
+        const res = await axios.get('https://access-puzzle-backend.onrender.com/api/puzzle');
         if (res.data) {
           setPuzzle(res.data);
           setGrid(res.data.grid || []);
