@@ -8,7 +8,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/leaderboard');
+        const res = await axios.get('https://access-puzzle-backend.onrender.com/api/leaderboard');
         setLeaders(res.data);
       } catch (err) {
         console.error(err);
