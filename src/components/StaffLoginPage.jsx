@@ -15,7 +15,7 @@ const StaffLoginPage = ({ onLogin }) => {
     const payload = { email, name, staffId };
     console.log('Submitting staff login payload:', payload);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/staff-login', payload);
+      const response = await axios.post('https://access-puzzle-backend.onrender.com/api/auth/staff-login', payload);
       onLogin(response.data); // Save token and user details
       // Redirect to the staff puzzle editor page
       navigate('/admin/puzzle-editor');
