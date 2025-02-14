@@ -1,0 +1,168 @@
+/* client/src/components/InteractivePuzzleEditor.css */
+.interactive-puzzle-editor {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .interactive-puzzle-editor h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dimension-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .dimension-controls label {
+    font-weight: bold;
+  }
+  
+  .dimension-controls input {
+    width: 50px;
+    padding: 5px;
+    margin-left: 5px;
+  }
+  
+  .dimension-controls button {
+    padding: 5px 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .dimension-controls button:hover {
+    background: #218838;
+  }
+  
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .grid-row {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .grid-cell {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .grid-cell.selected {
+    border: 2px solid #007bff;
+  }
+  
+  .grid-cell.blocked {
+    background: #333;
+  }
+  
+  .grid-cell input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    font-size: 1.2em;
+    background: transparent;
+    color: #000;
+  }
+  
+  .cell-number {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    font-size: 0.7em;
+    color: red;
+  }
+  
+  .toggle-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.6em;
+    padding: 2px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .generate-button,
+  .save-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .generate-button:hover,
+  .save-button:hover {
+    background: #218838;
+  }
+  
+  .word-preview {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .clue-editor {
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+  }
+  
+  .clue-editor h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .clue-item {
+    margin: 5px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .clue-item label {
+    width: 100px;
+    font-weight: bold;
+  }
+  
+  .clue-item input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
