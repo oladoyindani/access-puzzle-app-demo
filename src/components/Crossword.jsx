@@ -1,4 +1,3 @@
-// client/src/components/Crossword.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Crossword.css';
@@ -11,7 +10,7 @@ const Crossword = () => {
   useEffect(() => {
     const fetchPuzzle = async () => {
       try {
-        const res = await axios.get('https://access-puzzle-backend.onrender.com/api/puzzle');
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/puzzle`);
         if (res.data) {
           setPuzzle(res.data);
           setGrid(res.data.grid || []);
@@ -19,12 +18,20 @@ const Crossword = () => {
           setError('No puzzle data found.');
         }
       } catch (err) {
-        console.error(err);
-        setError('Error fetching puzzle');
+        console.error('Fetch error:', err.response?.data);
+        setError('Failed to fetch puzzle. Please try again later.');
       }
     };
     fetchPuzzle();
   }, []);
+
+  const handleInputChange = (rowIndex, colIndex, value) => {
+    setGrid(prevGrid => {
+      const newGrid = prevGrid.map(row => row.slice());
+      newGrid[rowIndex][colIndex].userInput = value.toUpperCase().slice(0, 1);
+      return newGrid;
+    });
+  };
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -44,7 +51,7 @@ const Crossword = () => {
                   key={colIndex}
                   className="crossword-cell"
                   value={cell.userInput || ''}
-                  onChange={(e) => {/* handle input changes */}}
+                  onChange={(e) => handleInputChange(rowIndex, colIndex, e.target.value)}
                   maxLength={1}
                 />
               ) : (
